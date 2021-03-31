@@ -37,8 +37,16 @@ fetch(
     >
       <div class="card-body">
         ${x.body}
-        <br>
-        <br>
+        <br><br>
+        <div align="center">
+          <a title="${x.title}" href="${x.url}" target="_blank">
+            <img src="https://www.cia.gov${x.image}" 
+            onerror="reemplaza_imagen(this);"
+            class="cia_image"
+            alt="Imagen No Disponible"/>
+          </a>
+        </div>
+        <br><br>
         <a href=${x.url} target="_blank">Ver más</a>
       </div>
     </div>
@@ -52,3 +60,9 @@ fetch(
   .catch((err) => {
     // Do something for an error here
   });
+
+function reemplaza_imagen(imagen){
+  imagen.onerror = "";
+  imagen.src = "../src/img/cia_logo.jpg";
+  return true;
+}

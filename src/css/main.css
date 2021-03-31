@@ -11,3 +11,8 @@
 .platzi_logo {
   text-decoration: none !important;
 }
+
+.cia_image {
+  max-width: 100%;
+  height: auto;
+}
